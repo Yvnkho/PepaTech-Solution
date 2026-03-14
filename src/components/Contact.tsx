@@ -18,6 +18,7 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
+      /* Commenting out Supabase connection for now
       const { error } = await supabase.from('contact_submissions').insert([
         {
           name: formData.name,
@@ -28,6 +29,10 @@ export default function Contact() {
       ]);
 
       if (error) throw error;
+      */
+
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 800));
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
